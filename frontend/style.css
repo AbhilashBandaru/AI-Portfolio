@@ -148,3 +148,51 @@ nav a:hover {
     }
 
 }
+
+/* CONTACT STYLING*/
+/* CONTACT STYLING*/
+/* CONTACT STYLING*/
+/* CONTACT STYLING*/
+
+#contact {
+    padding: 60px 20px;
+    text-align: center;
+}
+#contact form{
+    max-width: 500px;
+    margin: 30px auto;
+}
+#contact form div {
+    margin-bottom: 20px;
+}
+#contact label {
+    display: block;
+    margin-bottom: 8px;
+    text-align: left;
+}
+#contact input,
+#contact textarea {
+    width: 100%;
+    padding: 12px;
+    font-size: 16px;
+    box-sizing: border-box;
+}
+#contact textarea {
+    resize: vertical;
+}
+#contact button {
+    padding: 12px 24px;
+    background: black;
+    color: white;
+    border: 2px solid black;
+    cursor: pointer;
+    font-size: 16px;
+}
+#contact button:hover {
+    background: white;
+    color: black;
+}
+#contact input:focus,
+#contact textarea:focus {
+    outline: 2px solid black;
+}
