@@ -1,4 +1,14 @@
 
+
+:root {
+    --primary-color: #2563eb;
+    --dark-color: #111827;
+    --light-color: #f9fafb;
+    --text-color: #374151;
+}
+
+
+
 /*HOME PAGE */
 
 #home {
@@ -6,19 +16,21 @@
     padding:80px 20px;
 
 }
-#home h1{
+#home h1 {
     font-size: 48px;
     margin-bottom: 10px;
 }
-#home h2{
+#home h2 {
     font-size:24px;
 }
-#home p{
+#home p {
     font-size: 18px;
 }
 
 body {
     font-family: Arial, sans-serif;
+    background: var(--light-color);
+    color: var(--text-color);
 }
 /* navigation bar*/
 
@@ -32,20 +44,25 @@ body {
     align-items: center;
 
 }
-header{
+header {
     display:flex;
     justify-content: space-between;
     align-items:center;
-     padding: 20px 5%;
+    padding: 20px 5%;
+    background: var(--dark-color);
+
 }
-nav a{
+
+header h1 {
+    color: white;
+}
+nav a {
     text-decoration: none;
-    color: black;
+    color: white;
     transition: 0.3s;
 }
 nav a:hover {
-    color:red;
-}
+    color: var(--primary-color);}
 
 /*ABOUT */
 
@@ -84,17 +101,17 @@ nav a:hover {
 }
 
 /* projects*/
-#projects{
+#projects {
     padding: 60px 20px;
     text-align: center;
 }
-.projects-container{
+.projects-container {
     display: flex;
     gap:25px;
     justify-content: center;
     flex-wrap: wrap;
 }
-.projects-container article{
+.projects-container article {
     width: 280px;
     padding:20px;
     border: 2px solid black;
@@ -104,7 +121,7 @@ nav a:hover {
     line-height: 1.6;
 }
 
-.projects-container article:hover{
+.projects-container article:hover {
     transform: translateY(-5px);
 }
 
@@ -146,7 +163,7 @@ nav a:hover {
     padding: 60px 20px;
     text-align: center;
 }
-#contact form{
+#contact form {
     max-width: 500px;
     margin: 30px auto;
 }
@@ -182,17 +199,17 @@ nav a:hover {
     display: inline-block;
     padding: 12px 24px;
     margin: 10px;
-    background: black;
+    background: var(--primary-color);
     color: white;
-    border: 2px solid black;
+    border: 2px solid var(--primary-color);
     text-decoration: none;
     cursor: pointer;
     transition: 0.3s;
     font-size: 16px;
 }
 .btn:hover {
-    background: white;
-    color: black;
+     background: white;
+    color: var(--primary-color);
     transform: translateY(-3px);
 }
 
