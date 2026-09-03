@@ -3,7 +3,7 @@
 
 <head>
     <meta charset="UTF-8">
-    <title>contact - Abhilash Bandaru</title>
+    <title>Contact - Abhilash Bandaru</title>
     <link rel="stylesheet" href="style.css">
 </head>
 
@@ -24,61 +24,53 @@
 
     </header>
 
+    <main>
 
-   <main>
-    <section id = "contact" class="container">
-        <h1>Contact Me</h1>
+        <section id="contact" class="container">
 
-<p>
-    I'd love to hear from you. Feel free to get in touch.
-</p>
+            <h1>Contact Me</h1>
 
-<form>
+            <p>
+                I'd love to hear from you. Feel free to get in touch.
+            </p>
 
-<div>
-    <label for="name">Name</label>
+            <form id="contact-form">
 
-<input type="text" id="name" name="name" required>
-</div>
-<div>
-<label for="email">Email</label>
+                <div>
+                    <label for="name">Name</label>
+                    <input type="text" id="name" name="name">
+                    <p id="name-error"></p>
+                </div>
 
-<input type="email" id="email" name="email" required>
-</div>
-<div>
-<label for="message">Message</label>
+                <div>
+                    <label for="email">Email</label>
+                    <input type="email" id="email" name="email">
+                    <p id="email-error"></p>
+                </div>
 
-<textarea id="message" name="message" required></textarea>
-    </div>
-    <div>
-<button type="submit" class="btn">Send Message</button>
-</div>
-</form>
+                <div>
+                    <label for="message">Message</label>
+                    <textarea id="message" name="message"></textarea>
+                    <p id="message-error"></p>
+                </div>
 
+                <div>
+                    <button type="submit" class="btn">Send Message</button>
+                </div>
 
+                <p id="form-success"></p>
 
+            </form>
 
+        </section>
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-    </section>
-   </main>
-
+    </main>
 
     <footer>
         <p>&copy; 2026 Abhilash Bandaru</p>
     </footer>
+
+    <script src="script.js"></script>
 
 </body>
 
