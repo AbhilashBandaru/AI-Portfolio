@@ -58,13 +58,29 @@ nav ul {
 }
 
 nav a {
+    position: relative;
     text-decoration: none;
     color: var(--white-color);
     transition: color 0.3s ease;
 }
 
+nav a::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    bottom: -6px;
+    width: 0;
+    height: 2px;
+    background: var(--primary-color);
+    transition: width 0.3s ease;
+}
+
 nav a:hover {
     color: var(--primary-color);
+}
+
+nav a:hover::after {
+    width: 100%;
 }
 
 
@@ -196,17 +212,20 @@ nav a:hover {
 }
 
 .project-card {
-    padding: 20px;
+    padding: 25px;
     border: 1px solid var(--border-color);
-    border-radius: 8px;
+    border-radius: 10px;
     background: var(--white-color);
     box-shadow: var(--shadow);
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
+
+    transition:
+        transform 0.3s ease,
+        box-shadow 0.3s ease;
 }
 
 .project-card:hover {
-    transform: translateY(-5px);
-    box-shadow: 0 8px 18px rgba(0, 0, 0, 0.12);
+    transform: translateY(-8px);
+    box-shadow: 0 12px 25px rgba(0, 0, 0, 0.15);
 }
 
 
@@ -405,4 +424,13 @@ footer {
         transition: none;
     }
 
+}
+/* ===============================
+   KEYBOARD FOCUS
+================================ */
+
+nav a:focus-visible,
+.btn:focus-visible {
+    outline: 3px solid var(--primary-color);
+    outline-offset: 4px;
 }
