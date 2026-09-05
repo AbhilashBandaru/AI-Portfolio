@@ -1,4 +1,34 @@
 console.log("JavaScript is working!");
+// ===============================
+// MOBILE NAVIGATION
+// ===============================
+
+const menuButton = document.getElementById("menu-button");
+const mainNav = document.getElementById("main-nav");
+
+if (menuButton && mainNav) {
+
+    menuButton.addEventListener("click", function () {
+
+        mainNav.classList.toggle("active");
+
+        if (mainNav.classList.contains("active")) {
+
+            menuButton.textContent = "✕";
+            menuButton.setAttribute("aria-label", "Close navigation menu");
+            menuButton.setAttribute("aria-expanded", "true");
+
+        } else {
+
+            menuButton.textContent = "☰";
+            menuButton.setAttribute("aria-label", "Open navigation menu");
+            menuButton.setAttribute("aria-expanded", "false");
+
+        }
+
+    });
+
+}
 
 // ===============================
 // PROJECTS PAGE
