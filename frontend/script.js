@@ -1,5 +1,92 @@
 console.log("JavaScript is working!");
 // ===============================
+// SCROLL TO TOP
+// ===============================
+
+const scrollTopButton =
+    document.getElementById("scroll-top-button");
+
+if (scrollTopButton) {
+
+    window.addEventListener("scroll", function () {
+
+        if (window.scrollY > 300) {
+
+            scrollTopButton.classList.add("show");
+
+        } else {
+
+            scrollTopButton.classList.remove("show");
+
+        }
+
+    });
+
+
+    scrollTopButton.addEventListener("click", function () {
+
+        window.scrollTo({
+            top: 0,
+            behavior: "smooth"
+        });
+
+    });
+
+}
+// ===============================
+// DARK MODE
+// ===============================
+
+const themeButton = document.getElementById("theme-button");
+
+if (themeButton) {
+
+    const savedTheme = localStorage.getItem("theme");
+
+    if (savedTheme === "dark") {
+
+        document.body.classList.add("dark-theme");
+
+        themeButton.textContent = "☀️";
+        themeButton.setAttribute(
+            "aria-label",
+            "Switch to light mode"
+        );
+
+    }
+
+    themeButton.addEventListener("click", function () {
+
+        document.body.classList.toggle("dark-theme");
+
+        if (document.body.classList.contains("dark-theme")) {
+
+            themeButton.textContent = "☀️";
+
+            themeButton.setAttribute(
+                "aria-label",
+                "Switch to light mode"
+            );
+
+            localStorage.setItem("theme", "dark");
+
+        } else {
+
+            themeButton.textContent = "🌙";
+
+            themeButton.setAttribute(
+                "aria-label",
+                "Switch to dark mode"
+            );
+
+            localStorage.setItem("theme", "light");
+
+        }
+
+    });
+
+}
+// ===============================
 // MOBILE NAVIGATION
 // ===============================
 

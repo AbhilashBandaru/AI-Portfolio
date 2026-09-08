@@ -9,8 +9,15 @@
     --light-color: #f9fafb;
     --white-color: #ffffff;
     --text-color: #374151;
-    --border-color: #d1d5db;
+    --border-color: #9ca3af;
     --shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+}
+body.dark-theme {
+    --dark-color: #f9fafb;
+    --light-color: #111827;
+    --white-color: #1f2937;
+    --text-color: #e5e7eb;
+    --border-color: #4b5563;
 }
 
 * {
@@ -120,6 +127,29 @@ nav a.active::after {
 
     cursor: pointer;
 }
+.theme-button {
+    background: transparent;
+    border: none;
+
+    color: var(--white-color);
+
+    font-size: 22px;
+
+    cursor: pointer;
+
+    padding: 5px;
+
+    transition: transform 0.3s ease;
+}
+
+.theme-button:hover {
+    transform: rotate(20deg);
+}
+
+.theme-button:focus-visible {
+    outline: 3px solid var(--primary-color);
+    outline-offset: 4px;
+}
 
 /* ===============================
    HOME PAGE / HERO
@@ -136,9 +166,8 @@ nav a.active::after {
     background:
         linear-gradient(
             135deg,
-            #eff6ff,
-            #dbeafe,
-            #ffffff
+            var(--light-color),
+            var(--white-color)
         );
 
     overflow: hidden;
@@ -180,7 +209,6 @@ nav a.active::after {
     gap: 10px;
     flex-wrap: wrap;
 }
-
 
 /* ===============================
    ABOUT PAGE
@@ -264,7 +292,7 @@ nav a.active::after {
     gap: 25px;
 }
 
-..project-card {
+.project-card {
     position: relative;
 
     padding: 25px;
@@ -530,8 +558,9 @@ footer {
         gap: 15px;
     }
 
-    
-
+.theme-button {
+    display: block;
+} 
 }
 /* ===============================
    REDUCED MOTION
@@ -558,4 +587,67 @@ nav a:focus-visible,
 .btn:focus-visible {
     outline: 3px solid var(--primary-color);
     outline-offset: 4px;
+}
+/* ===============================
+   SCROLL TO TOP BUTTON
+================================ */
+
+/* ===============================
+   SCROLL TO TOP BUTTON
+================================ */
+
+.scroll-top-button {
+
+    position: fixed;
+
+    right: 25px;
+    bottom: 25px;
+
+    width: 50px;
+    height: 50px;
+
+    border: none;
+    border-radius: 8px;
+
+    background: var(--primary-color);
+    color: var(--white-color);
+
+    font-size: 24px;
+    font-weight: bold;
+
+    cursor: pointer;
+
+    display: none;
+
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+
+    z-index: 1000;
+
+    transition:
+        transform 0.3s ease,
+        background 0.3s ease;
+}
+
+
+.scroll-top-button.show {
+
+    display: block;
+
+}
+
+
+.scroll-top-button:hover {
+
+    transform: translateY(-5px);
+
+    background: var(--primary-dark);
+
+}
+
+
+.scroll-top-button:focus-visible {
+
+    outline: 3px solid var(--primary-color);
+    outline-offset: 4px;
+
 }
