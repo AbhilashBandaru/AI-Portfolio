@@ -23,6 +23,13 @@ body.dark-theme {
 * {
     box-sizing: border-box;
 }
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    overflow-x: hidden;
+}
 
 body {
     margin: 0;
@@ -36,6 +43,7 @@ body {
     width: 90%;
     max-width: 1100px;
     margin: 0 auto;
+    padding: 0 10px;
 }
 html {
     scroll-behavior: smooth;
@@ -250,7 +258,9 @@ nav a.active::after {
 }
 
 .skill-card {
-    width: 200px;
+    width: 100%;
+    max-width: 200px;
+
     padding: 25px 20px;
 
     border: 1px solid var(--border-color);
@@ -263,7 +273,6 @@ nav a.active::after {
         transform 0.3s ease,
         box-shadow 0.3s ease;
 }
-
 .skill-card h3 {
     margin-top: 0;
     margin-bottom: 10px;
@@ -297,7 +306,7 @@ nav a.active::after {
 
 .project-card {
     position: relative;
-
+    width: 100%;
     padding: 25px;
 
     border: 1px solid var(--border-color);
@@ -564,6 +573,72 @@ footer {
 .theme-button {
     display: block;
 } 
+section h1 {
+    font-size: 30px;
+}
+
+#contact {
+    padding: 50px 15px;
+}
+
+#contact form {
+    width: 100%;
+}
+
+.project-card {
+    padding: 20px;
+}
+
+.skill-card {
+    max-width: 100%;
+}
+}
+@media (max-width: 480px) {
+
+    header {
+        padding: 15px 20px;
+    }
+
+    header h1 {
+        font-size: 22px;
+    }
+
+    #home {
+        padding: 50px 15px;
+    }
+
+    #home h1 {
+        font-size: 32px;
+    }
+
+    #home h2 {
+        font-size: 20px;
+    }
+
+    .hero-description {
+        font-size: 15px;
+    }
+
+    .hero-buttons .btn {
+        width: 200px;
+    }
+
+    section h1 {
+        font-size: 27px;
+    }
+
+    #contact input,
+    #contact textarea {
+        font-size: 15px;
+    }
+
+    .scroll-top-button {
+        right: 15px;
+        bottom: 15px;
+        width: 45px;
+        height: 45px;
+        font-size: 20px;
+    }
 }
 /* ===============================
    REDUCED MOTION
