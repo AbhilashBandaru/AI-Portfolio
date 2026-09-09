@@ -223,3 +223,77 @@ if (contactForm) {
     });
 
 }
+// ===============================
+// TYPING ANIMATION
+// ===============================
+
+const typingText = document.getElementById("typing-text");
+
+if (typingText) {
+
+    const roles = [
+        "AI & Machine Learning Developer",
+        "Python Developer",
+        "Full Stack Developer",
+        "AI Engineer"
+    ];
+
+    let roleIndex = 0;
+    let characterIndex = 0;
+    let isDeleting = false;
+
+    function typeRole() {
+
+        const currentRole = roles[roleIndex];
+
+        if (isDeleting) {
+
+            typingText.textContent =
+                currentRole.substring(0, characterIndex);
+
+            characterIndex--;
+
+        } else {
+
+            typingText.textContent =
+                currentRole.substring(0, characterIndex);
+
+            characterIndex++;
+
+        }
+
+        let typingSpeed = isDeleting ? 60 : 100;
+
+        if (!isDeleting && characterIndex > currentRole.length) {
+
+            isDeleting = true;
+
+            typingSpeed = 1500;
+
+        }
+
+        else if (isDeleting && characterIndex < 0) {
+
+            isDeleting = false;
+
+            characterIndex = 0;
+
+            roleIndex++;
+
+            if (roleIndex >= roles.length) {
+
+                roleIndex = 0;
+
+            }
+
+            typingSpeed = 500;
+
+        }
+
+        setTimeout(typeRole, typingSpeed);
+
+    }
+
+    typeRole();
+
+}
