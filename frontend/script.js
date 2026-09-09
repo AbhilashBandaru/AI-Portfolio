@@ -95,6 +95,7 @@ const mainNav = document.getElementById("main-nav");
 
 if (menuButton && mainNav) {
 
+    // Open and close the menu
     menuButton.addEventListener("click", function () {
 
         mainNav.classList.toggle("active");
@@ -102,59 +103,83 @@ if (menuButton && mainNav) {
         if (mainNav.classList.contains("active")) {
 
             menuButton.textContent = "✕";
-            menuButton.setAttribute("aria-label", "Close navigation menu");
-            menuButton.setAttribute("aria-expanded", "true");
+
+            menuButton.setAttribute(
+                "aria-label",
+                "Close navigation menu"
+            );
+
+            menuButton.setAttribute(
+                "aria-expanded",
+                "true"
+            );
 
         } else {
 
             menuButton.textContent = "☰";
-            menuButton.setAttribute("aria-label", "Open navigation menu");
-            menuButton.setAttribute("aria-expanded", "false");
+
+            menuButton.setAttribute(
+                "aria-label",
+                "Open navigation menu"
+            );
+
+            menuButton.setAttribute(
+                "aria-expanded",
+                "false"
+            );
 
         }
 
     });
 
-}
 
-// ===============================
-// PROJECTS PAGE
-// ===============================
+    // Close menu after clicking a navigation link
+    const navLinks = mainNav.querySelectorAll("a");
 
-const title = document.getElementById("projects-title");
-const button = document.getElementById("change-button");
+    navLinks.forEach(function (link) {
 
-if (title && button) {
+        link.addEventListener("click", function () {
 
-    button.addEventListener("click", function () {
+            mainNav.classList.remove("active");
 
-        title.textContent = "Welcome to Abhilash's Projects";
+            menuButton.textContent = "☰";
+
+            menuButton.setAttribute(
+                "aria-label",
+                "Open navigation menu"
+            );
+
+            menuButton.setAttribute(
+                "aria-expanded",
+                "false"
+            );
+
+        });
 
     });
 
-}
 
+    // Close menu when clicking outside navigation
+    document.addEventListener("click", function (event) {
 
-// ===============================
-// ABOUT PAGE
-// ===============================
+        if (
+            !mainNav.contains(event.target) &&
+            !menuButton.contains(event.target)
+        ) {
 
-const moreAbout = document.getElementById("more-about");
-const aboutButton = document.getElementById("about-button");
+            mainNav.classList.remove("active");
 
-if (moreAbout && aboutButton) {
+            menuButton.textContent = "☰";
 
-    aboutButton.addEventListener("click", function () {
+            menuButton.setAttribute(
+                "aria-label",
+                "Open navigation menu"
+            );
 
-        moreAbout.classList.toggle("hidden");
-
-        if (moreAbout.classList.contains("hidden")) {
-
-            aboutButton.textContent = "Show More";
-
-        } else {
-
-            aboutButton.textContent = "Show Less";
+            menuButton.setAttribute(
+                "aria-expanded",
+                "false"
+            );
 
         }
 
