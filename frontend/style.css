@@ -19,6 +19,16 @@ body.dark-theme {
     --text-color: #e5e7eb;
     --border-color: #4b5563;
 }
+body.dark-theme #contact input,
+body.dark-theme #contact textarea {
+    background: var(--white-color);
+    color: var(--text-color);
+}
+
+body.dark-theme #contact input::placeholder,
+body.dark-theme #contact textarea::placeholder {
+    color: #9ca3af;
+}
 
 * {
     box-sizing: border-box;
@@ -592,6 +602,10 @@ section h1 {
 .skill-card {
     max-width: 100%;
 }
+.skills-grid,
+.projects-grid {
+    grid-template-columns: 1fr;
+}
 }
 @media (max-width: 480px) {
 
@@ -640,6 +654,17 @@ section h1 {
         font-size: 20px;
     }
 }
+@media (max-width: 900px) {
+
+    .skills-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .projects-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+}
 /* ===============================
    REDUCED MOTION
 ================================ */
@@ -655,7 +680,9 @@ section h1 {
     .project-card {
         transition: none;
     }
-
+main {
+    animation: none;
+}
 }
 /* ===============================
    KEYBOARD FOCUS
@@ -666,9 +693,6 @@ nav a:focus-visible,
     outline: 3px solid var(--primary-color);
     outline-offset: 4px;
 }
-/* ===============================
-   SCROLL TO TOP BUTTON
-================================ */
 
 /* ===============================
    SCROLL TO TOP BUTTON
@@ -727,5 +751,142 @@ nav a:focus-visible,
 
     outline: 3px solid var(--primary-color);
     outline-offset: 4px;
+
+}
+/* ===============================
+   HOME ADDITIONAL SECTIONS
+================================ */
+
+#skills-preview,
+#featured-projects,
+#home-cta {
+    padding: 70px 20px;
+    text-align: center;
+}
+
+.skills-grid,
+.projects-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 25px;
+    margin-top: 35px;
+}
+
+.projects-grid {
+    grid-template-columns: repeat(3, 1fr);
+}
+
+#home-cta {
+    background: var(--dark-color);
+    color: var(--white-color);
+}
+
+#home-cta h1 {
+    color: var(--white-color);
+}
+
+#home-cta p {
+    margin-bottom: 25px;
+}
+/* ===============================
+   PROJECT INFORMATION
+================================ */
+
+.project-category {
+    display: inline-block;
+    margin-bottom: 10px;
+
+    font-size: 13px;
+    font-weight: bold;
+
+    color: var(--primary-color);
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+.section-description {
+    max-width: 700px;
+    margin: 0 auto 30px;
+}
+
+.project-buttons {
+    margin-top: 20px;
+}
+/* ===============================
+   FORM MESSAGES
+================================ */
+
+#contact small {
+    display: block;
+    margin-top: 5px;
+    color: #dc2626;
+    text-align: left;
+}
+
+#form-success {
+    margin-top: 15px;
+    font-weight: bold;
+    color: #16a34a;
+}
+/* ===============================
+   FOOTER
+================================ */
+
+footer {
+    padding: 30px 20px;
+    background: var(--dark-color);
+    color: var(--white-color);
+    text-align: center;
+}
+
+footer p {
+    margin: 0 0 15px;
+}
+
+.footer-links {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+}
+
+.footer-links a {
+    color: var(--white-color);
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+.footer-links a:hover {
+    color: var(--primary-color);
+}
+/* ===============================
+   ACCESSIBILITY
+================================ */
+
+a:focus-visible,
+button:focus-visible,
+input:focus-visible,
+textarea:focus-visible {
+    outline: 3px solid var(--primary-color);
+    outline-offset: 3px;
+}
+/* ===============================
+   PAGE ENTRANCE
+================================ */
+
+main {
+    animation: pageFadeIn 0.5s ease;
+}
+
+@keyframes pageFadeIn {
+
+    from {
+        opacity: 0;
+        transform: translateY(10px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
 
 }

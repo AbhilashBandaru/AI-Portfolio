@@ -1,5 +1,27 @@
 console.log("JavaScript is working!");
 // ===============================
+// ACTIVE PAGE NAVIGATION
+// ===============================
+
+const currentPage =
+    window.location.pathname.split("/").pop();
+
+const navigationLinks =
+    document.querySelectorAll("nav a");
+
+navigationLinks.forEach(function (link) {
+
+    const linkPage =
+        link.getAttribute("href");
+
+    if (linkPage === currentPage) {
+
+        link.classList.add("active");
+
+    }
+
+});
+// ===============================
 // SCROLL TO TOP
 // ===============================
 
@@ -321,4 +343,21 @@ if (typingText) {
 
     typeRole();
 
+}
+// ===============================
+// SHOW MORE / SHOW LESS
+// ===============================
+const aboutButton = document.getElementById("about-button");
+const moreAbout = document.getElementById("more-about");
+
+if (aboutButton && moreAbout) {
+  aboutButton.addEventListener("click", function () {
+    if (moreAbout.classList.contains("hidden")) {
+      moreAbout.classList.remove("hidden");
+      aboutButton.textContent = "Show Less";
+    } else {
+      moreAbout.classList.add("hidden");
+      aboutButton.textContent = "Show More";
+    }
+  });
 }
